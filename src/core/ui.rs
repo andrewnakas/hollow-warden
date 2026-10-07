@@ -198,7 +198,7 @@ fn panel_ui(mut contexts: EguiContexts, mut open: ResMut<PanelOpen>, p: Res<Play
         .collapsible(false)
         .resizable(false)
         .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
-        .fixed_width(width)
+        .fixed_size([width, (screen.height() - 60.0).max(200.0)])
         .show(ctx, |ui| {
             egui::ScrollArea::vertical().max_height((screen.height() - 120.0).max(160.0)).show(ui, |ui| {
                 ui.label(egui::RichText::new(crate::core::game::TAGLINE).size(15.0));
